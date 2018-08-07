@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class ShowList {
 
 	// b)
@@ -20,16 +22,66 @@ public class ShowList {
 	public void addToStart(TVShow obj) {
 		head = new ShowNode(obj, head);
 	}
-	
+
 	// g) insertAtIndex method
 	public void insertAtIndex(TVShow obj, int i) {
 		if (i < 0 || i > (size - 1)) {
-			throw new NoSuchElementException(); 		// a reviser
-			System.exit(0);
+			throw new NoSuchElementException("There is no such index"); 		// a reviser
+		}
+		else if (i == 0) {
+			ShowNode newNode = new ShowNode(obj, null);
+			newNode.pointer = head;
+			head = newNode;
+			size++;
 		}
 		else {
-			// to continue
+			ShowNode newNode = new ShowNode(obj, null);
+			ShowNode previous = head;
+			int count = 0;
+			while (count < i - 1) {
+				previous = previous.pointer;
+				count++;
+			}
+			ShowNode current = previous.pointer;
+			newNode.pointer = current;
+			previous.pointer = newNode;
+			size++;
+		}	
+	}
+	
+	// h) deleteFromIndex method
+	public void deleteFromIndex(int i) {
+		if (i < 0 || i > (size - 1)) {
+			throw new NoSuchElementException("There is no such index"); 		// a reviser
 		}
+		else if(i == 0) {
+			deleteFromStart();
+		}
+		else {
+			ShowNode previous = head;
+			int count = 0;
+			while (count < (i - 1)) {
+				previous = previous.pointer;
+				count++;
+			}
+			ShowNode current = previous.pointer;
+			previous.pointer = current.pointer;
+			current.pointer = null;
+			size--;
+		}
+	}
+	
+	// i) deleteFromStart method
+	public void deleteFromStart() {		// what are the special cases here????
+		ShowNode temp = head;
+		head = head.pointer;
+		temp.pointer = null;
+		size--;
+	}
+	
+	// j) replaceAtIndex method
+	public void replaceAtIndex(TVShow obj, int i) {
+		
 	}
 
 
