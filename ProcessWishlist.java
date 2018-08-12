@@ -1,3 +1,18 @@
+/**
+ * Names and IDs:
+ * 		Myriam Tayah (40074762)
+ * 		Olivier Fradette-Roy (40074024)
+ * COMP 249
+ * Assignment #4
+ * Due Date : Saturday August 11, 2018
+ */
+
+//--------------------------------------------------------------------
+// Assignment 4
+// ProcessWishlist class, includes the main method
+// Written by: Olivier Fradette-Roy 40074024 and Myriam Tayah 40074762
+//--------------------------------------------------------------------
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -255,13 +270,13 @@ public class ProcessWishlist {
 		findShowbyID(interest);
 		findShowbyID(interest);
 
-		//e) TODO
+		//e) 
 		
 		/*
 		 *  TVShow class methods
 		 * DONE - create 2 tv show object according to user preferences
 		 * DONE - copy show1, ask user for new showID --> show3
-		 * DONE - clone show2... TODO --> show4
+		 * DONE - clone show2... --> show4
 		 * DONE - toString info for all 4
 		 * DONE - compare show1 and show4
 		 * DONE - check if show 1 and show 2 are on same time

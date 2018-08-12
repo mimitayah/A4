@@ -1,3 +1,18 @@
+/**
+ * Names and IDs:
+ * 		Myriam Tayah (40074762)
+ * 		Olivier Fradette-Roy (40074024)
+ * COMP 249
+ * Assignment #4
+ * Due Date : Saturday August 11, 2018
+ */
+
+//--------------------------------------------------------------------
+// Assignment 4
+// ShowList class and ShowNode inner class
+// Written by: Olivier Fradette-Roy 40074024 and Myriam Tayah 40074762
+//--------------------------------------------------------------------
+
 import java.util.NoSuchElementException;
 
 public class ShowList {
@@ -139,7 +154,7 @@ public class ShowList {
 	
 	// l) contains method
 	public boolean contains(String showIDsearched) {
-		if (find(showIDsearched) == null) {					//TODO easy simple way check if u like it :)
+		if (find(showIDsearched) == null) {					
 			return false;
 		}
 		else 
@@ -173,7 +188,7 @@ public class ShowList {
 
 		// i. private attributes
 		private TVShow aShow;
-		private ShowNode pointer;		// recheck
+		private ShowNode pointer;		
 
 		// ii. default constructor
 		public ShowNode() {
@@ -193,8 +208,11 @@ public class ShowList {
 			this.pointer = obj.pointer;
 		}
 
-		//TODO v. clone method
-
+		// v. clone method
+		public ShowNode clone() {
+			ShowNode clone = new ShowNode(this.aShow, this.pointer);
+			return clone;
+		}
 
 		// vi. accessor and mutator methods
 		public TVShow getaShow() {
