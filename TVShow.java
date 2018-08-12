@@ -103,10 +103,10 @@ public class TVShow implements Watchable, Cloneable {
 	// a) parameterized constructor
 	/**
 	 * This constructor is parameterized and will create a TVShow object with the passing attributes.
-	 * @param showID
-	 * @param showName
-	 * @param startTime
-	 * @param endTime
+	 * @param showID. Show ID, String variable, attribute of TVShow objects.
+	 * @param showName. Name of TV Show, String variable, attribute of TVShow objects.
+	 * @param startTime. Start time of TV Show, double variable, attribute of TVShow objects.
+	 * @param endTime. End time of TV Show, double variable, attribute of TVShow objects.
 	 */
 	
 	public TVShow(String showID, String showName, double startTime, double endTime) {
@@ -116,13 +116,13 @@ public class TVShow implements Watchable, Cloneable {
 		this.startTime = startTime;
 	}
 
+	// b) Copy Constructor
 	/**
 	 * This constructor will create an object of type TVShow by copying one that is passed as a parameter.
 	 * The only attribute that will defer between the two objects is the showID.
-	 * @param s2
-	 * @param newShowID
+	 * @param s2. Object of type TVShow.
+	 * @param newShowID. String variable for new showID.
 	 */
-	// b) Copy Constructor
 	public TVShow(TVShow s2, String newShowID) {
 		this.endTime = s2.endTime;
 		this.showName = s2.showName;
@@ -131,6 +131,10 @@ public class TVShow implements Watchable, Cloneable {
 	}
 
 	// c) clone method
+	/**
+	 * This clone method will create a clone of the calling TVShow object.
+	 * @return TVShowClone. A TVShow object, clone of calling object.
+	 */
 	public TVShow clone() {
 		Scanner scanner = new Scanner(System.in);
 		String newShowID;
@@ -142,16 +146,29 @@ public class TVShow implements Watchable, Cloneable {
 	}
 
 	// d) toString method
+	/**
+	 * This toString method will return a String containing all the attributes of a TVShow object.
+	 * @return String.
+	 */
 	public String toString() {
 		return ("Show ID: "+ showID + "\nShowName: "+ showName +"\nStart time: "+ startTime + "\nEnd time: "+ endTime);
 	}
 
 	// d) equals method
+	/**
+	 * This equals method will return true if the calling object is equal to the one that's passed.
+	 * @param obj. A TVShow object, passed object.
+	 * @return True if everything is equal (not including showID), false otherwise.
+	 */
 	public boolean equals(TVShow obj) {
-		return (obj.getEndTime() == endTime && obj.getStartTime() == startTime && obj.getShowName() == showName);
+		return (obj.getEndTime() == this.endTime && obj.getStartTime() == this.startTime && obj.getShowName() == this.showName);
 	}
 
 	// e) isOnSameTime method
+	/**
+	 * This method will compare the start and end times of the calling TVShow object to the passed one.
+	 * @return A String.
+	 */
 	public String isOnSameTime(TVShow S) {
 		if (this.getStartTime() == S.getStartTime() && this.getEndTime() == S.getEndTime()) {
 			return ("Same time");
