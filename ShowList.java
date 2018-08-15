@@ -27,7 +27,7 @@ public class ShowList {
 	// b)
 	private ShowNode head;		
 	// c)
-	private int size;
+	private int size = 0;
 
 	private int numIterations;
 
@@ -87,6 +87,7 @@ public class ShowList {
 		ShowNode temp = head;
 		head = new ShowNode(obj, head);
 		head.pointer = temp;
+		size++;
 	}
 
 	// g) insertAtIndex method
@@ -96,7 +97,7 @@ public class ShowList {
 	 * @param i. An int variable representing the index.
 	 */
 	public void insertAtIndex(TVShow obj, int i) {
-		if (i < 0 || i > (size - 1)) {
+		if (i < 0 || i > (this.size - 1)) {
 			throw new NoSuchElementException("There is no such index"); 		
 		}
 		else if (i == 0) {
@@ -179,7 +180,7 @@ public class ShowList {
 	 * @param i. An int variable representing the index of the node to be replaced.
 	 */
 	public void replaceAtIndex(TVShow obj, int i) {
-		if (i < 0 || i > (size - 1)) {
+		if (i < 0 || i > (this.size - 1)) {
 			throw new NoSuchElementException("There is no such index"); 		//TODO a reviser
 		}
 		else if (i == 0){
